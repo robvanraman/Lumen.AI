@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumen.AI</title>
+    <style>
+
+         h1 {
+            margin: 8px;
+        }
+        .vl {
+            border-left: 2px dotted white;
+            height: 190px;
+            }
+
+        .busy-indicator {
+        display: none; /* Initially hidden */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 18px;
+    }
+        
+    </style>
+    <script src="lumen.js"></script>
+</head>
+
+<body style="background-color: black;color: white;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+    <h1>Lumen.AI</h1>
+    
+
+    <table style="width: 100%;" > 
+        <tbody>
+            <tr>
+                <td>
+                    <table border="0" style="width: 100%;">
+                        <tr>
+                            <td colspan="3">
+                                Please enter your query here
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td style="width: 95%">
+                                 <input id="txtQuery"  style="border-radius: 10px;height: 30px;width: 99%;background-color: #36454F;color: white;border-color: blue;" placeholder="Query" type="text">
+                            </td>
+                            <td>
+                                <button id="cmdQuery" onclick="runModel();" type="submit"><img src="resources/go.jpg" height="23px" border="0" alt="Enter"></button>
+                            </td>
+                            <td>
+                                <img src="resources/660637.png" style="height: 25px" alt="Mic Icon" class="mic-icon">
+                            </td>
+                           
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        <table style="width: 100%;">
+                            <tr>
+                                <td align="left" style="width: 50%;">
+                                    <input id="lblSql" type="text" value="SQL query"
+                                        style="font-weight: bold; background-color: black;color: white;border: 0;visibility: hidden;">
+                                </td>
+                        
+                                <td align="left" style="width: 50%;">
+                                    <input id="lblTabData" type="text" value="Tabular Data"
+                                        style="font-weight: bold;background-color: black;color: white; border: 0;visibility: hidden;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="height: 190px;">
+                                    <textarea id="txtSqlQuery" rows="10" cols="100"
+                                        style="background-color: #36454F;color: white;resize: none;visibility: hidden;"></textarea>
+                                </td>
+                        
+                                <td>
+                        
+                                </td>
+                            </tr>
+                        </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div id="plot" >
+                        <table style="width: 100%;">
+                            <tr>
+                                <td align="center" style="width: 100%;">
+                                    <input id="lblPlot" type="text" value="Data Plot"
+                                        style="font-weight: bold; background-color: black;color: white;border: 0;visibility: hidden;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="height: 270px;">
+                                    
+                                </td>
+                               
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    
+
+    <div  style="text-align: center;padding: 10px;border-top: 1px solid #ddd">
+         @2024 - Lumen.AI
+    </div>
+    <div id="busyIndicator" class="busy-indicator"></div>
+</body>
+
+</html>
